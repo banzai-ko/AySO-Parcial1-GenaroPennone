@@ -1,0 +1,278 @@
+    1  ls
+    2  mkdir parcial1
+    3  for letra in {a..f}; do     touch "punto${letra}.sh"; done
+    4  ls
+    5  mv *.sh parcial1/
+    6  ls
+    7  git clone https://github.com/banzai-ko/AySO-Parcial1-GenaroPennone
+    8  ls
+    9  mv parcial1/ AySO-Parcial1-GenaroPennone/
+   10  ls
+   11  cd AySO-Parcial1-GenaroPennone/
+   12  sudo mkdir -p /EXAMENES-UTN/alumno_{1,2,3}//parcial_{1,2,3} /EXAMENES-UTN/profesores
+   13  ls
+   14  sudo mkdir -p /EXAMENES-UTN/alumno_{1,2,3}//parcial_{1,2,3} /EXAMENES-UTN/profesores >> parcial1/punto.a
+   15  cat parcial1/puntoa.sh 
+   16  echo "sudo mkdir -p /EXAMENES-UTN/alumno_{1,2,3}//parcial_{1,2,3} /EXAMENES-UTN/profesores >> parcial1/punto.a" > parcial1/puntoa.sh 
+   17  cat parcial1/puntoa.sh 
+   18  lsblk
+   19  clear
+   20  sudo parted /dev/sdb --script mklabel msdos
+   21  sudo parted /dev/sdb --script mkpart primary ext4 0% 2500MB
+   22  lslbk
+   23  lsblk
+   24  clear
+   25  sudo parted /dev/sdc --script mklabel msdos
+   26  sudo parted /dev/sdc --script mkpart primary ext4 0% 2500MB
+   27  sudo parted /dev/sdc --script mkpart primary ext4 2500MB 5000MB
+   28  sudo parted /dev/sdc --script mkpart primary ext4 5000MB 7500MB
+   29  sudo parted /dev/sdc --script mkpart extended 7500MB 10000MB
+   30  sudo parted /dev/sdc --script mkpart logical ext4 7500MB 10000MB
+   31  sudo parted /dev/sdc --script mkpart logical ext4 7500MB 100%
+   32  sudo parted /dev/sdc rm 5
+   33  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 7500MB 10000MB
+   34  sudo parted /dev/sdc align-check optimal 5
+   35  sudo parted /dev/sdc align-check optimal 1
+   36  sudo parted /dev/sdc align-check optimal 2
+   37  sudo parted /dev/sdc align-check optimal 3
+   38  sudo parted /dev/sdc align-check optimal 5
+   39  sudo parted /dev/sdc rm 5 
+   40  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 7500MB 100%
+   41  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 7500MB 10240MB
+   42  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 7500MB 1000
+   43  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 7500MB 10000
+   44  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 75% 100%
+   45  sudo parted /dev/sdc rm 5 
+   46  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 75% 100%
+   47  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 75% 95%
+   48  sudo parted /dev/sdc --script --align optimal mkpart logical ext4 75% 90%
+   49  lsblk
+   50  sudo parted /dev/sdc --script mklabel msdos
+   51  sudo parted /dev/sdc --script mkpart primary ext4 0% 25%
+   52  sudo parted /dev/sdc --script mkpart primary ext4 25% 50%
+   53  sudo parted /dev/sdc --script mkpart primary ext4 50% 75%
+   54  sudo parted /dev/sdc --script mkpart extended 75% 100%
+   55  sudo parted /dev/sdc --script mkpart logical ext4 75% 100%
+   56  clearlsblk
+   57  lsblk
+   58  clear
+   59  echo "sudo parted /dev/sdc --script mklabel msdos
+sudo parted /dev/sdc --script mkpart primary ext4 0% 25%
+sudo parted /dev/sdc --script mkpart primary ext4 25% 50%
+sudo parted /dev/sdc --script mkpart primary ext4 50% 75%
+sudo parted /dev/sdc --script mkpart extended 75% 100%
+sudo parted /dev/sdc --script mkpart logical ext4 75% 100%" >> parcial1/puntob.sh 
+   60  ls
+   61  cd parcial1/
+   62  ls
+   63  cat puntob.sh 
+   64  vim puntob.sh 
+   65  cd ..
+   66  echo "#Montaje" >> parcial1/puntob.sh 
+   67  cat parcial1/puntob.sh 
+   68  vim parcial1/puntob.sh 
+   69  sudo mkfs.ext4 /dev/sdc1  
+   70  sudo mkfs.ext4 /dev/sdc2  
+   71  sudo mkfs.ext4 /dev/sdc3
+   72  sudo mkfs.ext4 /dev/sdc5
+   73  echo "sudo mkfs.ext4 /dev/sdc1  
+sudo mkfs.ext4 /dev/sdc2  
+sudo mkfs.ext4 /dev/sdc3
+sudo mkfs.ext4 /dev/sdc5
+" >> parcial1/puntob.sh 
+   74  cat parcial1/puntob.sh 
+   75  echo "# Montaje" >> parcial1/puntob.sh 
+   76  sudo mkdir -p /mnt/disco{1,2,3,4}
+   77  echo "sudo mkdir -p /mnt/disco{1,2,3,4}" >> parcial1/puntob.sh 
+   78  sudo mount /dev/sdc1 /mnt/disco1  
+   79  sudo mount /dev/sdc2 /mnt/disco2  
+   80  sudo mount /dev/sdc3 /mnt/disco3  
+   81  sudo mount /dev/sdc5 /mnt/disco4 
+   82  clear
+   83  lsblk
+   84  cat parcial1/puntob.sh 
+   85  echo "sudo mount /dev/sdc1 /mnt/disco1  
+sudo mount /dev/sdc2 /mnt/disco2  
+sudo mount /dev/sdc3 /mnt/disco3  
+sudo mount /dev/sdc5 /mnt/disco4 " >> parcial1/puntob.sh 
+   86  echo "# Resultado " >> parcial1/puntob.sh 
+   87  lsblk >> parcial1/puntob.sh 
+   88  cat parcial1/puntob.sh 
+   89  vim parcial1/puntob.sh 
+   90  for user in developer tester devops diseñador; do     sudo useradd -m "$user"; done
+   91  cat /etc/passwd | cut -d: -f1
+   92  echo "for user in developer tester devops diseñador; do     sudo useradd -m "$user"; done" >> parcial1/puntoc.sh 
+   93  cat parcial1/puntoc.sh 
+   94  clear
+   95  sudo groupadd grupodevops
+   96  sudo usermod -aG grupodevops developer
+   97  sudo groupadd grupodiseño
+   98  sudo usermod -aG grupodiseño tester
+   99  sudo groupadd grupodeveloper
+  100  sudo usermod -aG grupodeveloper devops
+  101  id developer
+  102  id tester
+  103  id devops
+  104  id diseñador
+  105  ls
+  106  history
+  107  clear
+  108  echo "sudo groupadd grupodevops" >> parcial1/puntoc.sh 
+  109  echo "sudo usermod -aG grupodevops developer" >> parcial1/puntoc.sh 
+  110  echo "sudo groupadd grupodiseño" >> parcial1/puntoc.sh 
+  111  echo "sudo usermod -aG grupodiseño tester" >> parcial1/puntoc.sh 
+  112  echo "sudo groupadd grupodeveloper" >> parcial1/puntoc.sh 
+  113  echo "sudo usermod -aG grupodeveloper devops" >> parcial1/puntoc.sh 
+  114  cat parcial1/puntoc.sh 
+  115  echo '#!/bin/bash' | cat - parcial1/puntoc.sh > temp && mv temp parcial1/puntoc.sh
+  116  cat parcial1/puntoc.sh 
+  117  cat parcial1/puntoa.sh 
+  118  cat parcial1/puntob
+  119  cat parcial1/puntob.sh 
+  120  echo '#!/bin/bash' | cat - parcial1/puntoa.sh > temp && mv temp parcial1/puntoa.sh
+  121  cat parcial1/puntoa.sh 
+  122  clear
+  123  cd /
+  124  pwd
+  125  ll
+  126  sudo chown developer:developer /EXAMENES-UTN/alumno_1
+  127  sudo chmod 750 /EXAMENES-UTN/alumno_1
+  128  ll EXAMENES-UTN/
+  129  echo "sudo chown developer:developer /EXAMENES-UTN/alumno_1" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  130  echo "sudo chmod 750 /EXAMENES-UTN/alumno_1" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh
+  131  sudo chown tester:tester /EXAMENES-UTN/alumno_2
+  132  sudo chmod 760 /EXAMENES-UTN/alumno_2
+  133  echo "sudo chown tester:tester /EXAMENES-UTN/alumno_2" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  134  echo "sudo chmod 760 /EXAMENES-UTN/alumno_2" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  135  ls
+  136  clear
+  137  sudo chown devops:devops /EXAMENES-UTN/alumno_3
+  138  echo "sudo chown devops:devops /EXAMENES-UTN/alumno_3" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  139  sudo chmod 700 /EXAMENES-UTN/alumno_3
+  140  echo "sudo chmod 700 /EXAMENES-UTN/alumno_3" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  141  clear
+  142  cat ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  143  clear
+  144  sudo chown diseñador:diseñador /EXAMENES-UTN/profesores
+  145  echo "sudo chown diseñador:diseñador /EXAMENES-UTN/profesores" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  146  sudo chmod 755 /EXAMENES-UTN/profesores
+  147  echo "sudo chmod 755 /EXAMENES-UTN/profesores" >> ~/AySO-Parcial1-GenaroPennone/parcial1/puntoc.sh 
+  148  ls
+  149  sudo su developer
+  150  whoami
+  151  sudo chown -R developer:developer /EXAMENES-UTN/alumno_1
+  152  sudo chmod -R 750 /EXAMENES-UTN/alumno_1
+  153  sudo chown -R tester:tester /EXAMENES-UTN/alumno_2
+  154  sudo chmod -R 760 /EXAMENES-UTN/alumno_2
+  155  sudo chown -R devops:devops /EXAMENES-UTN/alumno_3
+  156  sudo chmod -R 700 /EXAMENES-UTN/alumno_3
+  157  sudo chown -R diseñador:diseñador /EXAMENES-UTN/profesores
+  158  sudo chmod -R 755 /EXAMENES-UTN/profesores
+  159  clear
+  160  sudo su developer
+  161  sudo su tester
+  162  sudo su devops
+  163  whoami
+  164  sudo su diseñador
+  165  pwd
+  166  tree
+  167  sudo apt update; sudo apt install tree
+  168  tree
+  169  sudo tree
+  170  cd /
+  171  cp -r EXAMENES-UTN/ ~/AySO-Parcial1-GenaroPennone/
+  172  sudo cp -r EXAMENES-UTN/ ~/AySO-Parcial1-GenaroPennone/
+  173  cd 
+  174  cd AySO-Parcial1-GenaroPennone/
+  175  ls
+  176  clear
+  177  ls
+  178  mkdir -p Estructura_Asimetrica/{correo,clientes}/{cartas_{1..100}} Estructura_Asimetrica/correo/{carteros_{1..10}}
+  179  ls
+  180  tree
+  181  tree Estructura_Asimetrica/
+  182  clear
+  183  echo "mkdir -p Estructura_Asimetrica/{correo,clientes}/{cartas_{1..100}} Estructura_Asimetrica/correo/{carteros_{1..10}}" >> parcial1/puntod.sh 
+  184  cat /proc/meminfo
+  185  cat /proc/meminfo | grep MemTotal
+  186  cat /proc/meminfo | grep MemTotal > Filtro_Básico.txt
+  187  cat Filtro_Básico.txt 
+  188  ls
+  189  cat Filtro_Básico.txt 
+  190  echo "cat /proc/meminfo | grep MemTotal > Filtro_Básico.txt" parcial1/puntoe.sh 
+  191  cat parcial1/puntoe.sh 
+  192  echo "cat /proc/meminfo | grep MemTotal > Filtro_Básico.txt" > parcial1/puntoe.sh 
+  193  cat parcial1/puntoe.sh 
+  194  dmidecode -t
+  195  dmidecode -t chassis
+  196  sudo dmidecode -t chassis
+  197  cat parcial1/puntoe.sh 
+  198  cat Filtro_Básico.txt 
+  199  sudo dmidecode -t chassis
+  200  sudo dmidecode -t chassis | grep Manufacurer
+  201  sudo dmidecode -t chassis | grep Manufacturer
+  202  sudo dmidecode -t chassis | grep -E 'Manufacturer|Type'
+  203  sudo dmidecode -t chassis
+  204  sudo dmidecode -t chassis | grep -E 'Chassis Infomration|Manufacturer'
+  205  sudo dmidecode -t chassis | grep -E 'Chassis Information|Manufacturer'
+  206  sudo dmidecode -t chassis | grep -E 'Chassis Information|Manufacturer' >> Filtro_Básico.txt 
+  207  echo "sudo dmidecode -t chassis | grep -E 'Chassis Information|Manufacturer' >> Filtro_Básico.txt" >> parcial1/puntoe.sh 
+  208  cat parcial1/puntoe.sh 
+  209  cat Filtro_Básico.txt 
+  210  cd parcial1/
+  211  ls
+  212  pwd
+  213  clear
+  214  curl -s ifconfig.me
+  215  curl
+  216  history
+  217  clear
+  218  curl -s ifconfig.me 
+  219  cat /etc/shadow
+  220  sudo cat /etc/shadow
+  221  sudo cat /etc/shadow | vagrant
+  222  sudo cat /etc/shadow | grep vagrant
+  223  clear
+  224  echo -e "Mi IP Publica es: $(curl -s ifconfig.me)\n\
+Mi usuario es: $(whoami)" > mi_info.txt \nEl hash de mi usuario es:  sudo cat /etc/shadow | grep vagrant | awk -F ':' '{print $2}'" >> Filtro_avanzado.txt
+ls
+  225  echo "Mi IP Publica es: $(curl -s ifconfig.me)" > Filtro_avanzado.txt
+  226  echo "Mi usuario es: $(whoami)" >> Filtro_avanzado.txt 
+  227  echo "El hash de mi usuario es:  ${sudo cat /etc/shadow | grep vagrant | awk -F ':' '{print $2}'}" >> Filtro_avanzado.txt
+  228  ls
+  229  cat Filtro_avanzado.txt 
+  230  echo "El hash de mi usuario es:  ${sudo cat /etc/shadow | grep vagrant | awk -F ':' '{print $2}'}" >> Filtro_avanzado.txt
+  231  echo "El hash de mi usuario es: $(sudo cat /etc/shadow | grep vagrant | awk -F ':' '{print $2}')" >> Filtro_avanzado.txt
+  232  cat Filtro_avanzado.txt 
+  233  clear
+  234  echo "echo "Mi IP Publica es: $(curl -s ifconfig.me)" > Filtro_avanzado.txt
+echo "Mi usuario es: $(whoami)" >> Filtro_avanzado.txt 
+echo "El hash de mi usuario es: $(sudo cat /etc/shadow | grep vagrant | awk -F ':' '{print $2}')" >> Filtro_avanzado.txt" > puntod.sh 
+  235  cat puntod.sh 
+  236  echo '#!/bin/bash' | cat - puntod.sh > temp && mv temp puntod.sh 
+  237  clear
+  238  ls
+  239  cat puntod.sh 
+  240  cat puntoe.sh 
+  241  echo '#!/bin/bash' | cat - puntoe.sh > temp && mv temp puntoe.sh
+  242  clear
+  243  cd ..
+  244  ls
+  245  mv Filtro_Básico.txt parcial1/
+  246  vim README.md 
+  247  mkdir notas
+  248  cd notas/
+  249  vim Done.md
+  250  clear
+  251  cat Done.md 
+  252  vim Done.md
+  253  cat ~/.bash_logout 
+  254  cd 
+  255  cat .bash_logout ls -la
+  256  ls -la
+  257  cat ~/.bash_logout 
+  258  history
+  259  cd AySO-Parcial1-GenaroPennone/
+  260  cd notas/
+  261  ls
+  262  history > history.txt
