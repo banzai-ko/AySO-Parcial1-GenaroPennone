@@ -276,3 +276,15 @@ echo "El hash de mi usuario es: $(sudo cat /etc/shadow | grep vagrant | awk -F '
   260  cd notas/
   261  ls
   262  history > history.txt
+  263  cat history.txt 
+  264  cd ..
+  265  git status
+  266  git config --global user.name "banzai.ko"; git config --global user.email "boxko398@gmail.com"
+  267  git add .
+  268  clear
+  269  ssh -T git@github.com
+  270  git status
+  271  git commit -m "Parcial 1 AySo GP"
+  272  ls
+  273  cd notas/
+  274  history > history.txt 
