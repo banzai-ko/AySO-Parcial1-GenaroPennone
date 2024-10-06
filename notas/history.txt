@@ -288,3 +288,14 @@ echo "El hash de mi usuario es: $(sudo cat /etc/shadow | grep vagrant | awk -F '
   272  ls
   273  cd notas/
   274  history > history.txt 
+  275  clear
+  276  git add .
+  277  git commit -m "Parcial 1 AySo GP"
+  278  git push
+  279  cd ..
+  280  cd .git/
+  281  vim config 
+  282  clear
+  283  cd ..
+  284  cd notas/
+  285  history > history.txt 
